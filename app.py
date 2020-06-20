@@ -17,7 +17,8 @@ def main():
     src_db_host,src_db_name,src_db_user,src_db_pass=src_db['DB_HOST'],src_db['DB_NAME'],src_db['DB_USER'],src_db['DB_PASS']
     trgt_db_host, trgt_db_name, trgt_db_user, trgt_db_pass = trgt_db['DB_HOST'], trgt_db['DB_NAME'], trgt_db['DB_USER'], \
                                                          trgt_db['DB_PASS']
-
+    my_sqlconn=read.get_mysqlconn(src_db_host,src_db_name,src_db_user,src_db_pass)
+    print('Connection established to mysql Database')
 
 
 
