@@ -5,13 +5,13 @@ DB_DETAILS = {
             'DB_HOST': '34.72.91.74',
             'DB_NAME': 'retail_db',
             'DB_USER': 'retail_user',
-            'DB_PASS': 'itversity'
+            'DB_PASS': 'your password for source db'
         },
         'TARGET_DB': {
             'DB_HOST': '34.72.91.74',
             'DB_NAME': 'retail_db',
             'DB_USER': 'retail_user',
-            'DB_PASS': 'itversity'
+            'DB_PASS': 'your password for target db'
         }
     },
     'testing': {
