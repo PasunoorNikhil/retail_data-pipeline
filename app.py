@@ -1,8 +1,13 @@
 import sys
 from config import DB_DETAILS
 import read
-def main():
+import process
+import write
 
+def main():
+    """ Main function from which connection to Source Database is established then
+        the data is is processed and stored in data frames and the processed data frames
+        are written to Target Database"""
     if len(sys.argv)==1:
         print("No arguments Passed")
         print(" To run use command python app.py dev")
@@ -14,11 +19,15 @@ def main():
     db_details=DB_DETAILS[env]
     src_db=db_details['SOURCE_DB']
     trgt_db=db_details['TARGET_DB']
-    src_db_host,src_db_name,src_db_user,src_db_pass=src_db['DB_HOST'],src_db['DB_NAME'],src_db['DB_USER'],src_db['DB_PASS']
-    trgt_db_host, trgt_db_name, trgt_db_user, trgt_db_pass = trgt_db['DB_HOST'], trgt_db['DB_NAME'], trgt_db['DB_USER'], \
-                                                         trgt_db['DB_PASS']
-    my_sqlconn=read.get_mysqlconn(src_db_host,src_db_name,src_db_user,src_db_pass)
-    print('Connection established to mysql Database')
+    print("Intializing connection to Mysql Database")
+    mysql_conn=read.get_mysqlconn(src_db)
+    print('Connection established to Mysql Database')
+    print('Starting processing the data ')
+    df_products,df_customers,df_product_revenue_dly,df_revenue_dly=process.process_data(mysql_conn)
+    print('Finished processing the data ')
+    print('Starting writing the data to PostGres Database')
+    write.transfer_data(df_products,df_customers,df_product_revenue_dly,df_revenue_dly, trgt_db)
+    print('Completed writing to Postgres')
 
 
 
