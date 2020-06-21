@@ -1,7 +1,8 @@
 import pandas as pd
 import psycopg2
-import process
+
 from sqlalchemy import create_engine
+
 def transfer_data(df_products,df_customers,df_product_revenue_dly,df_revenue_dly,trgt_db):
     """Method takes the target database details and also the data frames to be loaded to database
         and loads the data frames into the PostGres Database"""

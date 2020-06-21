@@ -27,7 +27,7 @@ def main():
     print('Finished processing the data ')
     print('Starting writing the data to PostGres Database')
     write.transfer_data(df_products,df_customers,df_product_revenue_dly,df_revenue_dly, trgt_db)
-    print('Completed writing to Postgres')
+    print('Completed writing the data to Postgres')
 
 
 
