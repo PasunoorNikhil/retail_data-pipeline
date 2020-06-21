@@ -97,4 +97,4 @@ The data extraction and loading will be much faster if all the three containers 
 
 ## Acknowledgments
 
-* The data was taken from Mr. Durga Gadiraju and the use cases and the flow of the project was also suggested by him.
+* The data was taken from [Mr. Durga Gadiraju's git hub repo](https://github.com/dgadiraju) and the use cases and the flow of the project was also suggested by him.
