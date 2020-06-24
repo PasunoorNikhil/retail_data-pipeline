@@ -51,19 +51,19 @@ sudo docker exec -it mysql_retail_db mysql -u root -p
 This prompts for the password used which is used above while creating the container
 After entering the container run the following commands to create database, user and build tables from a .sql script<br>
 ```
-CREATE DATABASE retail_db;<br>
+CREATE DATABASE retail_db;<br />
 ```
 ```
-CREATE USER retail_user IDENTIFIED BY 'your password for database';<br>
+CREATE USER retail_user IDENTIFIED BY 'your password for database';<br />
 ```
 ```
-FLUSH PRIVILEGES;<br>
+FLUSH PRIVILEGES;<br />
 ```
 ```
-USE retail_db;<br>
+USE retail_db;<br />
 ```
 ```
-SOURCE /retail_db/create_db.sql<br>
+SOURCE /retail_db/create_db.sql<br />
 ```
 
 Now the MySQL data base is up and running and tables are imported to the database in the docker container. Try to validate by running queries on these tables
@@ -80,13 +80,13 @@ sudo docker exec -it pg_retail_db psql -U postgres -W
 This prompts for the password used which is used above while creating the container.<br>
 After entering the container run the following commands to create database, user <br>
 ```
-CREATE DATABASE retail_db;<br>
+CREATE DATABASE retail_db;<br />
 ```
 ```
-CREATE USER retail_user WITH ENCRYPTED PASSWORD 'your password for db here';<br>
+CREATE USER retail_user WITH ENCRYPTED PASSWORD 'your password for db here';<br />
 ```
 ```
-GRANT ALL PRIVILEGES ON DATABASE retail_db TO retail_user;<br>
+GRANT ALL PRIVILEGES ON DATABASE retail_db TO retail_user;<br />
 ```
 Now the PostGres data base is up and running in the docker container. 
 
