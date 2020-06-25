@@ -24,7 +24,7 @@ The data has been cloned from [retail_db](https://github.com/dgadiraju/retail_db
 Make sure docker is installed in your server or local machine.
 
 
-### Setting up Source (MySQL data base) and target (Postgres database)
+### Setting up Source (MySQL database) and target (Postgres database)
 The Source and target data bases will be setup as part of two docker containers.
 First make sure you have cloned the data from the above provided link and docker is installed.
 Pull postgres and mysql images using the command
@@ -54,7 +54,7 @@ After entering the container run the following commands to create database, user
 CREATE DATABASE retail_db;
 ```
 ```
-CREATE USER retail_user IDENTIFIED BY 'your password for database';<br />
+CREATE USER retail_user IDENTIFIED BY 'your password for database';
 ```
 ```
 FLUSH PRIVILEGES;
